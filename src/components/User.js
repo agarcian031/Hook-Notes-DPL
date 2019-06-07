@@ -50,6 +50,14 @@ const State = (props) => {
   // built in goBack function given through react router. 
   const goBack = () => props.history.goBack()
 
+  const countCheck = () => {
+    if (count >= 0 ) {
+      setCount(count - 1)
+    } else {
+      return "count cannot go below zero"
+    }
+  }
+
   return ( 
   <div className="App">
       <header className="App-header">
@@ -58,6 +66,7 @@ const State = (props) => {
         <p>You have clicked {count} times </p>
         <button onClick={() => setCount( count + 1 )}>+++</button>
         <button onClick={() => setCount( count - 1 )}>---</button>
+        <button onClick={() => countCheck}> Check </button>
         </div>
       </header>
   </div>
