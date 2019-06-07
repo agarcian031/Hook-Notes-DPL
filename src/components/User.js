@@ -45,6 +45,8 @@ import '../App.css'
 // Called state because it will demonstrate the useState component. 
 
 const State = (props) => {
+  const [count, setCount] = useState(0)
+
   // built in goBack function given through react router. 
   const goBack = () => props.history.goBack()
 
@@ -52,7 +54,11 @@ const State = (props) => {
   <div className="App">
       <header className="App-header">
         <button onClick={() => goBack()}>Go Back</button>
-
+        <div style={{height: '100px', width: '300px'}}> 
+        <p>You have clicked {count} times </p>
+        <button onClick={() => setCount( count + 1 )}>+++</button>
+        <button onClick={() => setCount( count - 1 )}>---</button>
+        </div>
       </header>
   </div>
 )
